@@ -12,6 +12,7 @@ import { DynamicFormService } from '../dynamicForm.service';
 export class DynamicFormComponent implements OnInit {
 
     @Input() controls: ControlBase<any>[] = [];
+    @Input() submitClass: string;
     form: FormGroup;
     payLoad = '';
 

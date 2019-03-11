@@ -1,4 +1,3 @@
-
 import { ControlBase } from './controlBase';
 
 export class DropdownControl extends ControlBase<string> {
