@@ -1,31 +1,30 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { ControlBase } from '../controls/controlBase';
 import { DynamicFormService } from '../dynamicForm.service';
 
 @Component({
-    selector: 'clr-dynamic-form',
-    templateUrl: './dynamicForm.component.html',
-    providers: [DynamicFormService]
+  selector: 'clr-dynamic-form',
+  templateUrl: './dynamicForm.component.html',
+  providers: [DynamicFormService]
 })
 export class DynamicFormComponent implements OnInit {
+  @Input() controls: ControlBase<any>[] = [];
+  @Input() submitClass: string;
+  @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
 
-    @Input() controls: ControlBase<any>[] = [];
-    @Input() submitClass: string;
-    form: FormGroup;
-    payLoad = '';
+  form: FormGroup;
+  payLoad = '';
 
-    constructor(private dfs: DynamicFormService) { }
+  constructor(private dfs: DynamicFormService) {}
 
-    ngOnInit() {
-        this.form = this.dfs.toFormGroup(this.controls);
-    }
+  ngOnInit() {
+    this.form = this.dfs.toFormGroup(this.controls);
+  }
 
-    onSubmit() {
-        this.payLoad = JSON.stringify(this.form.value);
-    }
+  onSubmit() {
+    //this.payLoad = JSON.stringify(this.form.value);
+    this.submitForm.emit(this.form.value);
+  }
 }
-
-
-
