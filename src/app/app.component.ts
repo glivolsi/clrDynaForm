@@ -5,7 +5,7 @@ import * as forms from './forms';
   selector: 'app-root',
   template: `
     <div class="app">
-      <clr-dynamic-form [controls]="controls" submitClass="btn btn-warning btn-sm" (submitForm)="handleSubmit($event)"></clr-dynamic-form>
+      <clr-dynamic-form [controls]="controls" submitClass="btn btn-warning btn-sm" (submitForm)="handleSubmit($event)" formClass="clr-form clr-form-compact"></clr-dynamic-form>
     </div>
     <pre>
     {{ formValues | json }}

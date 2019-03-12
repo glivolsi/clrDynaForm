@@ -3,6 +3,7 @@
     <clr-input-container *ngSwitchCase="'textbox'">
       <label [attr.for]="control.key">{{ control.label }}</label>
       <input clrInput [formControlName]="control.key" [id]="control.key" [type]="control['type']" />
+      <clr-control-error class="error">required</clr-control-error>
     </clr-input-container>
 
     <clr-select-container *ngSwitchCase="'dropdown'">
@@ -10,7 +11,7 @@
       <select clrSelect [id]="control.key" [formControlName]="control.key">
         <option *ngFor="let opt of control['options']" [value]="opt.key">{{ opt.value }}</option>
       </select>
+      <clr-control-error class="error">required</clr-control-error>
     </clr-select-container>
   </div>
-  <div class="errorMessage" *ngIf="!isValid">{{ control.label }} is required</div>
 </div>

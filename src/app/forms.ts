@@ -8,7 +8,8 @@ export const testform: ControlBase<any>[] = [
     key: 'food',
     label: 'Favourite Food',
     options: [{ key: 'pizza', value: 'Pizza' }, { key: 'hamburger', value: 'Hamburger' }, { key: 'chili', value: 'Chili' }, { key: 'coffe', value: 'Coffe' }],
-    order: 50
+    order: 50,
+    validators: [Validators.required]
   }),
 
   new TextboxControl({

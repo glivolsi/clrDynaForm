@@ -12,6 +12,7 @@ import { DynamicFormService } from '../dynamicForm.service';
 export class DynamicFormComponent implements OnInit {
   @Input() controls: ControlBase<any>[] = [];
   @Input() submitClass: string;
+  @Input() formClass: string;
   @Output() submitForm: EventEmitter<any> = new EventEmitter<any>();
 
   form: FormGroup;

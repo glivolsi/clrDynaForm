@@ -1,5 +1,5 @@
 <div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <form (ngSubmit)="onSubmit()" [formGroup]="form" [ngClass]="formClass">
     <div *ngFor="let control of controls" class="form-row">
       <app-control [control]="control" [form]="form"></app-control>
     </div>
@@ -8,5 +8,4 @@
       <button type="submit" [ngClass]="submitClass" [disabled]="!form.valid">Save</button>
     </div>
   </form>
-  <!-- <div *ngIf="payLoad" class="form-row"><strong>Saved the following values</strong><br />{{ payLoad }}</div> -->
 </div>

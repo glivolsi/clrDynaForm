@@ -4,7 +4,8 @@ import { ControlBase } from '../controls/controlBase';
 
 @Component({
   selector: 'app-control',
-  templateUrl: './dynamicFormControls.component.html'
+  templateUrl: './dynamicFormControls.component.html',
+  styleUrls: ['./dynamicFormControls.component.scss']
 })
 export class DynamicFormControlsComponent {
   @Input() control: ControlBase<any>;
