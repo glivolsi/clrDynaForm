@@ -1,0 +1,8 @@
+<button class="btn btn-primary btn-sm" (click)="handleClick()">Click Me</button>
+<pre>{{ formValues | json }}</pre>
+
+<clr-modal [(clrModalOpen)]="opened">
+  <div class="modal-body">
+    <clr-dynamic-form [controls]="controls" submitClass="btn btn-warning btn-sm" (submitForm)="handleSubmit($event)" formClass="clr-form clr-form-compact"></clr-dynamic-form>
+  </div>
+</clr-modal>

@@ -7,17 +7,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DynamicFormModule } from 'src/dynamicform/dynamicform.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    ClarityModule,
-    BrowserAnimationsModule,
-    DynamicFormModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, ClarityModule, BrowserAnimationsModule, DynamicFormModule],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-}
+export class AppModule {}

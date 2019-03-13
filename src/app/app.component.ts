@@ -1,28 +1,28 @@
 import { Component } from '@angular/core';
 import * as forms from './forms';
+import { TextboxControl } from 'src/dynamicform/controls/control-textbox';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div class="app">
-      <clr-dynamic-form [controls]="controls" submitClass="btn btn-warning btn-sm" (submitForm)="handleSubmit($event)" formClass="clr-form clr-form-compact"></clr-dynamic-form>
-    </div>
-    <pre>
-    {{ formValues | json }}
-    </pre
-    >
-  `,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'clrdynaform';
   formValues: any = {};
   controls: any[];
+  opened: boolean = false;
+
   constructor() {
-    this.controls = forms.testform.sort((a, b) => a.order - b.order);
+    this.controls = [...forms.testform.sort((a, b) => a.order - b.order)];
   }
 
   handleSubmit(e: Event) {
+    this.opened = false;
     this.formValues = e;
+  }
+
+  handleClick(e: Event) {
+    this.opened = true;
   }
 }

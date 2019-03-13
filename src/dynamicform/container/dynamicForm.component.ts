@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter, OnDestroy, AfterContentChecked, AfterContentInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 
 import { ControlBase } from '../controls/controlBase';
@@ -25,7 +25,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   onSubmit() {
-    //this.payLoad = JSON.stringify(this.form.value);
     this.submitForm.emit(this.form.value);
+    this.form = this.dfs.toFormGroup(this.controls);
   }
 }
