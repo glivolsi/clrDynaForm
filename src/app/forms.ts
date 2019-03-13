@@ -1,6 +1,6 @@
-import { ControlBase } from 'src/dynamicform/controls/controlBase';
-import { DropdownControl } from 'src/dynamicform/controls/control-dropdown';
-import { TextboxControl } from 'src/dynamicform/controls/control-textbox';
+import { ControlBase } from '../dynamicform/controls/controlBase';
+import { DropdownControl } from '../dynamicform/controls/control-dropdown';
+import { TextboxControl } from '../dynamicform/controls/control-textbox';
 import { Validators } from '@angular/forms';
 
 export const testform: ControlBase<any>[] = [

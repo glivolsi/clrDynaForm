@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import * as forms from './forms';
-import { TextboxControl } from 'src/dynamicform/controls/control-textbox';
 
 @Component({
   selector: 'app-root',

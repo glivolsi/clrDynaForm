@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { DynamicFormModule } from 'src/dynamicform/dynamicform.module';
+import { DynamicFormModule } from '../dynamicform/dynamicform.module';
 
 @NgModule({
   declarations: [AppComponent],
